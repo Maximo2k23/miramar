@@ -4,29 +4,29 @@
 --
 CREATE TABLE `producto` (
   `id` int(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  `nombre` varchar(99) COLLATE utf8_spanish_ci NOT NULL,
+  `title` varchar(299) COLLATE utf8_spanish_ci NOT NULL,
+  `price` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
-  `descripcion` varchar(299) COLLATE utf8_spanish_ci NOT NULL,
-  `precio` int(11) NOT NULL,
-  `imagen` varchar(299) COLLATE utf8_spanish_ci NOT NULL
+  `sizes` varchar(299) COLLATE utf8_spanish_ci NOT NULL,  
+  `imageURL` varchar(400) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id`, `nombre`, `stock`, `descripcion`, `precio`, `imagen`)
+INSERT INTO `producto` (`id`, `title`, `price`, `stock`, `sizes`, `imageURL`)
 VALUES
-(1, 'Playera Wish', 20, 'Playera con diseño de la película Wish', 23, 'https://cdn.discordapp.com/attachments/863565659806760960/1259673036735381545/image_1.png?ex=668c896f&is=668b37ef&hm=794138eefe71a91642b080abe616a89498c2306b0b5c3497f310fe31d5cfcb7e&'),
-(2, 'Juega o Muere Taza', 20, 'Taza inspirada en la película Juega o Muere', 12, 'https://cdn.discordapp.com/attachments/863565659806760960/1259673037058474105/image_2.png?ex=668c896f&is=668b37ef&hm=9738a211a6e8acca52a1dfce232c1a65a0346311d8b788f8d729dc334f3ece8e&'),
-(3, 'Superman (1978) Agenda', 20, 'Agenda con diseño de la película Superman (1978)', 18, 'https://cdn.discordapp.com/attachments/863565659806760960/1259673037373182074/image_3.png?ex=668c896f&is=668b37ef&hm=0f08eab39c318bb03836cb4225649d5bd36f0e3bb983e4d09b708ff62ae2fcba&'),
-(4, 'Los Juegos del Hambre Almohada', 20, 'Almohada inspirada en Los Juegos del Hambre', 30, 'https://cdn.discordapp.com/attachments/863565659806760960/1259673037771374652/image_4.png?ex=668c896f&is=668b37ef&hm=7f2e1ea6890959291534138c003ebc0abca01b270d885b6da4768b651b0d04cc&'),
-(5, 'Digimon Adventure 02 Hoodie', 20, 'Hoodie de Digimon Adventure 02', 45, 'https://cdn.discordapp.com/attachments/863565659806760960/1259673038044135434/image_5.png?ex=668c896f&is=668b37ef&hm=30c64de13218c6f36c1d5ba06b600c3887cd14e53ee1f3e86e64bf2b0389768d&'),
-(6, 'Juega o Muere Playera', 20, 'Playera inspirada en Juega o Muere', 20, 'https://cdn.discordapp.com/attachments/863565659806760960/1259673038383747192/image_6.png?ex=668c896f&is=668b37ef&hm=beb725e4e2c87d6336f3a89c4958321d34a14533e52ab9e37af898c0d65d78b5&'),
-(7, 'Superman (1978) Vaso', 20, 'Vaso con diseño de Superman (1978)', 13, 'https://cdn.discordapp.com/attachments/863565659806760960/1259673039046709329/image_8.png?ex=668c8970&is=668b37f0&hm=c238fc43cd617a0148f907900f348ed1bdc6e5c5c0c4a31a04bb59e65ad96309&'),
-(8, 'Los Juegos del Hambre Libro', 20, 'Libro de Los Juegos del Hambre', 30, 'https://cdn.discordapp.com/attachments/863565659806760960/1259673039390380052/image_9.png?ex=668c8970&is=668b37f0&hm=91374ceeee8a4f495fa556675ab49a4b0c2d9b6a9615f688c043dc8e3ec1d69f&'),
-(9, 'Wish: El Poder de los Deseos Bolso', 20, 'Bolso con diseño de Wish: El Poder de los Deseos', 12, 'https://cdn.discordapp.com/attachments/863565659806760960/1259673039688437901/image_10.png?ex=668c8970&is=668b37f0&hm=6dce96954afa4a5ac2a5acccc2c487dcb7a17bc259f95996d594f25eaaf8035f&'),
-(10, 'Digimon Adventure 02 Almohada Jumbo', 20, 'Almohada Jumbo de Digimon Adventure 02', 28, 'https://cdn.discordapp.com/attachments/863565659806760960/1259673039688437901/image_10.png?ex=668c8970&is=668b37f0&hm=6dce96954afa4a5ac2a5acccc2c487dcb7a17bc259f95996d594f25eaaf8035f&');
+(1, 'Playera Wish Lorem ipsum dolor sit amet, consectetur adipiscing elit', 23.00, 45, 'S, M, L, XL', 'https://lh3.googleusercontent.com/pw/AP1GczNxPertNkGsfNQaVZ4tkMRXwLI38tX8KHlmE7fqfjvnNdmo1g1ZoB77FIDztff-iHJ4T72UraRTWYXVla2zg3r-H6irfWZDwfisofhfVl1AkgcNwYFJj4HRkyaNB6YG7afeB9WeZ85K1pwJXUKyUi4wRw=w518-h778-s-no?authuser=0'),
+(2, 'Juega o Muere Taza Lorem ipsum dolor sit amet, consectetur adipiscing elit', 12.00, 21, '16oz', 'https://lh3.googleusercontent.com/pw/AP1GczPsxdctfCJTb1reEyWm7ww2FOf2iCnc576ZkHxkIVe5TyWC7BSzVBWwXLX0MuOWd607B3TRQEI0rXlQjO8ZEOzJkQNfU--X6qr2mZiyFkY1Re4cMslX1UjV87zt1-8BggAj25ZQgmoaVx6RQtmBkVOj6A=w518-h778-s-no?authuser=0'),
+(3, 'Superman (1978) Agenda Lorem ipsum dolor sit amet, consectetur adipiscing elit', 18.00, 33, 'A5', 'https://lh3.googleusercontent.com/pw/AP1GczMkA5TV-M7ggUtkFZRjbkt18F2iyk_fi5K_Ts8tDxpfqdBsGbXLM27ICVaKepTb5Nq1pQ1JZ_CBsAuIbMKSBl2Dq8WYRXFtlVwOZVERQNL83THrz91xiqqgmr8anV3uznGoPruJcZzXz59zhbqvmD6eCw=w518-h778-s-no?authuser=0'),
+(4, 'Los Juegos del Hambre almohada Lorem ipsum dolor sit amet, consectetur adipiscing elit', 30.00, 8, '50x50cm', 'https://lh3.googleusercontent.com/pw/AP1GczPD8LAQpFzzqfygcVsEqf1bNHdYt-T2M42k4V8aXICO4PtZiT6r2nZL4XyxWaaUcqusHVOm5hDi9x5yP45h5PuVJJn6x_AAN94oEzVtC4XF2J82KWSlOOR2JIwi50wMQXNwnxnxNKYhIjXwsmYa9Tc7mQ=w518-h778-s-no?authuser=0'),
+(5, 'Digimon Adventure 02 hoodie Lorem ipsum dolor sit amet, consectetur adipiscing elit', 45.00, 12, 'S, M, L, XL', 'https://lh3.googleusercontent.com/pw/AP1GczMtVv5CvO-H4whC4zWhMKAc6FliZCdm0uovIwj8HKswmJ4y2y3hMmzQnA_VgRqdMhl_UPQ91FAD5cQcygwj6hRVQwdK6TMVvL9WxtLhZjEX02GYA_9DTgW8EiTbaEZ6NH3mH5KZcnleKMgw7BfrUUChXw=w518-h778-s-no?authuser=0'),
+(6, 'Juega o Muere Playera Lorem ipsum dolor sit amet, consectetur adipiscing elit', 20.00, 15, 'S, M, L, XL', 'https://lh3.googleusercontent.com/pw/AP1GczPnlGD_E_JD6qQCokYLc8zxNLT9ikyuJ3aYNG0JUxvWjFSLUFf2PXBD_bpC2jeK9fIxo3yCTVfZwbUnrp5YqZAv6mOqhCrbm7yUbDIj9HolCFp-yKSDFJGc6GoXqR1vdGAlICdfJQ4SOnVxN8GQkL4wdw=w518-h778-s-no?authuser=0'),
+(7, 'Superman (1978) Vaso Lorem ipsum dolor sit amet, consectetur adipiscing elit', 13.00, 3, '16oz', 'https://lh3.googleusercontent.com/pw/AP1GczPCkaYW4I155SBNX-VTJep9mp5CyJyGKA7aQE6lJuWtHIYk82hpXO02rfksK29S6Ytn4nUcbCX9sjNWnMLlyu71j7WWKg40u8yX0wt9mJrkfUL1OJwihMZv0sFSptTGBworzM-qxHNyvo1gVLkuIN48Mw=w518-h777-s-no?authuser=0'),
+(8, 'Los Juegos del Hambre Libro Lorem ipsum dolor sit amet, consectetur adipiscing elit', 30.00, 43, 'A4', 'https://lh3.googleusercontent.com/pw/AP1GczNvzuDux-gXjpVUpE_gWeDBEVkCt6UnS9z2R35plL2a7jmRSDQCIEP8y18dc6QAEU9GGIyUp10HSjwPI8GNlMHTJ3ER_Al662ByunhKqLKZSaRhqdXjlKgiE7ugndt4GyxpcEMPJ2mhhRDVlq0F0tPgeg=w518-h777-s-no?authuser=0'),
+(9, 'Wish: El Poder de los Deseos bolso Lorem ipsum dolor sit amet, consectetur adipiscing elit', 12.00, 7, 'Medium', 'https://lh3.googleusercontent.com/pw/AP1GczNL9ChAwUxRAZBELvHOKvyVLei9NBY8ax-8KseAviTvsCzHLInkNarvf09EyMSAYD3ahQ-d7LTpjSsategV0-8cpoxr2VAnnwJ7Y6PWneOV58-hAoSNqAKiBuUoQokeNAPNGubGOftUOvZGqgafsF0Dkg=w518-h778-s-no?authuser=0'),
+(10, 'Digimon Adventure 02 Almohada Jumbo Lorem ipsum dolor sit amet, consectetur adipiscing elit', 28.00, 29, 'Jumbo', 'https://lh3.googleusercontent.com/pw/AP1GczPHs0AGEKpwXYSsp2nsNfiGCb_xRAHRO2wq-smy33zADypH5vDIZID-p3MSR8_TngxvecCD34oc5074EN8EqgbvlhSo8XfejIL-cxWUxeOhdR2mBH0EHTFw7HXmFBtuXvi2_VVnOGXhaEDZUTHYXSh0_A=w518-h778-s-no?authuser=0');
 
 
 

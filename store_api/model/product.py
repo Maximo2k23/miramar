@@ -4,8 +4,8 @@ class ProductModel(BaseModel):
     __tablename__ = "producto"
 
     #id: int = None
-    nombre: str = ''
+    title: str = ''
+    price: int = ''
     stock: int = ''
-    descripcion: str = ''
-    precio: int = ''
-    imagen: str = ''
+    sizes: str = ''
+    imageURL: str = ''
