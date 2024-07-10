@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  mysql_db:
+    image: mysql:5.7
+    container_name: 'store_ios_mysql_db'
+    env_file:
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "3306:3306"
+    volumes:
+      - store-mysql-data:/var/lib/mysql
+      - ./store_api/database/mysql/mysql_init.sql:/docker-entrypoint-initdb.d/mysql_init.sql
+  redis:
+    image: redis:7
+    env_file:
+      - .env
+    container_name: redis_ios
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_PORT=$(REDIS_PORT)
+      - REDIS_DATABASES=$(REDIS_DATABASES)
+      - REDIS_PASSWORD=$(REDIS_PASSWORD)
+  store_api_ios:
+    image: store_api_base
+    container_name: store_api_ios
+    ports:
+      - 8000:8000
+    volumes:
+        - ./store_api:/app
+    command:  sh -c "uvicorn main:app --reload --port=8000 --host=0.0.0.0"
+    extra_hosts:
+      - "host.docker.local:host-gateway"
+    depends_on:
+      - mysql_db
+      - redis
+
+volumes:
+  store-mysql-data:
